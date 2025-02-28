@@ -1,0 +1,68 @@
+<html>
+<body>
+<table style="font-family: 'Comic Sans MS', cursive; font-size: 18px; border-collapse: collapse; width: 80%; margin: 20px auto;">
+	<tbody>
+		<tr style="border-bottom: 2px solid #ddd;">
+			<td colspan="2" style="padding: 10px; text-align: center;">
+				<h1 style="margin: 0;">
+					Student Information Form</h1>
+			</td>
+		</tr>
+		<!-- 学生ID -->
+		<tr>
+			<td style="padding: 12px; width: 30%; vertical-align: top;">
+				Student ID</td>
+			<td style="padding: 12px;">
+				<input style="width: 200px; padding: 5px;" type="text" value="D1000000" /></td>
+		</tr>
+		<!-- 姓名 -->
+		<tr>
+			<td style="padding: 12px;">
+				Name</td>
+			<td style="padding: 12px;">
+				<input style="width: 200px; padding: 5px;" type="text" /></td>
+		</tr>
+		<!-- 性别 -->
+		<tr>
+			<td style="padding: 12px;">
+				Gender</td>
+			<td style="padding: 12px;">
+				<label><input checked="checked" name="gender" type="radio" value="male" /> Male </label> &nbsp;&nbsp; <label> <input name="gender" type="radio" value="female" /> Female </label></td>
+		</tr>
+		<!-- 爱好 -->
+		<tr>
+			<td style="padding: 12px;">
+				Habits</td>
+			<td style="padding: 12px;">
+				<label><input name="swimming" type="checkbox" value="1" /> Swimming </label> &nbsp;&nbsp; <label> <input name="pingpong" type="checkbox" /> Ping Pong </label> &nbsp;&nbsp; <label> <input name="guitar" type="checkbox" /> Guitar </label></td>
+		</tr>
+		<!-- 专业 -->
+		<tr>
+			<td style="padding: 12px;">
+				Major</td>
+			<td style="padding: 12px;">
+				<select name="major" style="width: 200px; padding: 5px;"><option value="English">English</option><option value="Chemistry">Chemistry</option><option value="Physics">Physics</option><option value="Math">Math</option><option value="History">History</option><option value="Geography">Geography</option></select></td>
+		</tr>
+		<!-- 城市 -->
+		<tr>
+			<td style="padding: 12px;">
+				City</td>
+			<td style="padding: 12px;">
+				<input list="cityList" name="city" placeholder="选择或输入城市" style="width: 200px; padding: 5px;" />
+				<datalist id="cityList">
+					&nbsp;</datalist>
+			</td>
+		</tr>
+		<!-- 学习经历 -->
+		<tr>
+			<td style="padding: 12px; vertical-align: top;">
+				Learn Experience</td>
+			<td style="padding: 12px;">
+				<textarea cols="50" rows="6" style="width: 100%; padding: 8px; box-sizing: border-box;"></textarea></td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p >
+</body>
+</html>
