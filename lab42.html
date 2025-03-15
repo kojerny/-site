@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF - 8">
+    <meta name="viewport" content="width=device-width, initial - scale=1.0">
+    <title>个人简历</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+
+        .animated-ellipse {
+            width: 200px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #FF5733, #33FF57, #337AFF);
+            animation: gradient-animation 5s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+
+        .resume-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+        }
+
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        .personal-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .info-item {
+            width: 30%;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .photo-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .job-intention,
+        .work-experience,
+        .education-experience,
+        .social-relations,
+        .self-evaluation {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+
+        .job-intention p,
+        .education-experience p {
+            margin: 0;
+        }
+
+
+        .work-experience ul,
+        .social-relations ul,
+        .self-evaluation ul {
+            padding-left: 20px;
+        }
+
+
+        .text-version {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="animated-ellipse"></div>
+    <div class="resume-container">
+        <header class="resume-header">
+            <h1>个人简历</h1>
+        </header>
+        <section class="personal-info">
+            <div class="info-item">
+                <span>姓 名</span>
+                <span>简小丽</span>
+            </div>
+            <div class="info-item">
+                <span>年 龄</span>
+                <span>26</span>
+            </div>
+            <div class="info-item">
+                <span>性 别</span>
+                <span>女</span>
+            </div>
+            <div class="info-item">
+                <span>地 址</span>
+                <span>湖南 长沙 岳麓区</span>
+            </div>
+            <div class="info-item">
+                <span>电 话</span>
+                <span>135 - 0000 - 0000</span>
+            </div>
+            <div class="info-item">
+                <span>婚姻状况</span>
+                <span>已婚</span>
+            </div>
+            <div class="info-item photo-container">
+                <img src="这里应替换为实际图片地址" alt="头像">
+            </div>
+        </section>
+        <section class="job-intention">
+            <h2>求职意向</h2>
+            <p>区域经理</p>
+        </section>
+        <section class="work-experience">
+            <h2>工作经历</h2>
+            <ul>
+                <li>
+                    <h3>社区服务站慢病管理员</h3>
+                    <ol>
+                        <li>负责为客户进行体检并解读体检结果。</li>
+                        <li>评估客户的健康状况和所患疾病危险性；进行健康咨询与指导。</li>
+                        <li>对患者进行糖尿病、高血压检测工作。</li>
+                    </ol>
+                </li>
+                <li>
+                    <h3>药店店员（工作经验四年）</h3>
+                    <ol>
+                        <li>负责接待顾客的咨询，了解顾客的需求并达成销售；</li>
+                        <li>负责做好货品销售记录、盘点、账目核对等工作，按规定完成各项销售统计工作；</li>
+                        <li>完成商品的来货验收、上架陈列摆放、补货、退货、防损等日常营业工作；</li>
+                        <li>做好所负责区域的卫生清洁工作；</li>
+                        <li>了解公司下达的销售任务指标，进行销售任务的分解；</li>
+                        <li>对商品的价格、产地等做到了如指掌。</li>
+                    </ol>
+                </li>
+            </ul>
+        </section>
+        <section class="education-experience">
+            <h2>教育经历</h2>
+            <p>中专学历 （本人学历不高，正在就读成人高考）</p>
+        </section>
+        <section class="social-relations">
+            <h2>社会关系</h2>
+            <ul>
+                <li>家人从事教育行业老师和学校领导等工作。</li>
+                <li>本人对象与很多老板是朋友关系，具有一定的社会关系。</li>
+            </ul>
+        </section>
+        <section class="self-evaluation">
+            <h2>自我评价</h2>
+            <ul>
+                <li>对于市场具有一定的观察诊断能力，了解当地市场人流量、竞争情况、消费喜好、消费者分布情况。</li>
+                <li>对于产品、人员、价格等具有一定的管理能力。</li>
+                <li>对于营销知识及品牌知识等具有一定的了解。</li>
+                <li>具有一定的会预测、分析、洞察和规划布局等能力。</li>
+                <li>能快速了解公司营销方案并执行等能力。</li>
+            </ul>
+        </section>
+    </div>
+    <p class="text-version">文字版</p>
+</body>
+
+</html>
