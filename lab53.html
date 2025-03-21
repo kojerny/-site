@@ -1,0 +1,37 @@
+  <html>
+<head>
+    <style>
+        @keyframes fly {
+            from { top: 800px; }
+            to { top: 0px; }
+        }
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            position: absolute;
+            top: 300px;
+            animation: fly 10s 1;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function makeballoon(cl) {
+            let b = document.createElement('div');
+            b.className = 'circle';
+            b.id = 'b' + Math.random().toString(36).substr(2, 9); // Generate a unique ID for each balloon
+            b.style.backgroundColor = cl;
+            b.style.left = Math.round(Math.random() * 800) + 'px';
+            document.body.appendChild(b);
+        }
+        
+        window.onload = function() {
+            for (let i = 0; i < 10; i++) {
+                let color = '#' + Math.floor(Math.random()*16777215).toString(16); // Generate a random color
+                makeballoon(color);
+            }
+        };
+    </script>
+</body>
+</html>
