@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>气球动画</title>
+    <style>
+        @keyframes fly {
+            from {
+                top: 700px;
+            }
+
+            to {
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function Balloon(color1, diameter, speed) {
+            // 为每个气球实例生成唯一的id
+            this.id = Math.random().toString(36).substr(2, 9); 
+            this.color = color1;
+            this.diameter = diameter;
+            this.speed = speed;
+
+            // 创建气球元素的方法
+            this.make = function () {
+                let dv = document.createElement("div");
+                dv.id = 'b' + this.id;
+                dv.style.cssText = `width: ${this.diameter}px; 
+                                    height: ${this.diameter}px;
+                                    border-radius: ${this.diameter / 2}px; 
+                                    background-color: ${this.color}; 
+                                    position: absolute;
+                                    left: ${this.id * 50}px; 
+                                    top: 700px;`;
+                dv.innerHTML = ` ${this.id}`;
+                document.body.appendChild(dv);
+            };
+
+            // 让气球上升的方法
+            this.rise = function () {
+                let dv = document.getElementById('b' + this.id);
+                dv.style.animationName = "fly";
+                dv.style.animationDuration = ~~(700 / this.speed) + 's';
+            };
+        }
+
+        for (let i = 0; i < 100; i++) {
+            // 生成随机颜色值
+            let r = '#' + Math.floor(Math.random() * 16777215).toString(16); 
+            let s = Math.random() * 200;
+            let w = (Math.random() * 200 + 30);
+            let b = new Balloon(r, w, s);
+            b.make();
+            b.rise();
+        }
+    </script>
+</body>
+
+</html>
