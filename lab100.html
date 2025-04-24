@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements of Computing Homework 10</title>
+</head>
+
+<body>
+    <script>
+        function righttime(d, timeslots) {
+            const dayMap = {
+                'M': 1, 'T': 2, 'W': 3, 'R': 4, 'F': 5, 'S': 6, 'U': 0
+            };
+            const timeSlotsArray = timeslots.split(',').map(slot => slot.trim());
+            const targetDay = d.getDay();
+            const targetTime = d.getHours() * 60 + d.getMinutes();
+
+            for (const slot of timeSlotsArray) {
+                const [days, timeRange] = slot.split(/\s+/);
+                const [startTimeStr, endTimeStr] = timeRange.split('-');
+                const [startHour, startMinute] = startTimeStr.split(':').map(Number);
+                const [endHour, endMinute] = endTimeStr.split(':').map(Number);
+                const startTime = startHour * 60 + startMinute;
+                const endTime = endHour * 60 + endMinute;
+
+                for (const day of days) {
+                    if (dayMap[day] === targetDay && startTime <= targetTime && targetTime <= endTime) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        
+        const testDate = new Date(2024, 0, 1, 10, 30); // 2024年1月1日10:30
+        const testTimeSlots = 'T 10:00 - 11:00, W 14:00 - 15:00';
+        console.log(righttime(testDate, testTimeSlots));
+    </script>
+</body>
+
+</html>

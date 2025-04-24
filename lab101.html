@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Animation</title>
+    <style>
+        @keyframes fly {
+            from {
+                top: 700px;
+            }
+
+            to {
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        class Balloon {
+            constructor(color1, diameter, speed) {
+                this.color = color1;
+                this.diameter = diameter;
+                this.speed = speed;
+                this.id = Math.random().toString(36).substr(2, 9);
+            }
+
+            make() {
+                let dv = document.createElement("div");
+                dv.id = 'b' + this.id;
+                dv.style.cssText = `width: ${this.diameter}px; height: ${this.diameter}px; border-radius: ${this.diameter / 2}px; background-color: ${this.color}; position: absolute; left: ${parseInt(this.id, 36) % 10 * 50}px; top: 700px;`;
+                dv.innerHTML = ' ' + this.id;
+                document.body.appendChild(dv);
+            }
+
+            rise() {
+                let dv = document.getElementById('b' + this.id);
+                if (dv) {
+                    dv.style.animationName = "fly";
+                    // 避免速度为0的情况
+                    let duration = this.speed === 0? 10 : Math.floor(700 / this.speed);
+                    dv.style.animationDuration = duration + 's';
+                }
+            }
+        }
+
+        for (let i = 0; i < 100; i++) {
+            let r = (Math.random() * 1000000).toString().replace(/\..*$/, '');
+            let s = Math.random() * 200 + 1; // 确保速度不为0
+            let w = Math.random() * 200 + 30;
+            let b = new Balloon('#' + r, w, s);
+            b.make();
+            b.rise();
+        }
+    </script>
+</body>
+
+</html>
